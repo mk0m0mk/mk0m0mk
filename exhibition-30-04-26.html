@@ -1,0 +1,576 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <!-- CHANGE THIS -->
+    <title>“OVERTIME” — Victor M. Gonzalez</title>
+
+
+    <style>
+
+        * {
+            box-sizing: border-box;
+        }
+
+        html,
+        body {
+            margin: 0;
+            padding: 0;
+
+            background: #ffffff;
+            color: #000000;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 12px;
+            line-height: 1.35;
+            font-weight: 400;
+        }
+
+
+        a {
+            color: #000000;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+
+
+        /* --------------------------------
+           PAGE
+        -------------------------------- */
+
+        .page {
+            width: 100%;
+            padding: 18px 20px 140px;
+        }
+
+
+
+        /* --------------------------------
+           HEADER
+        -------------------------------- */
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+
+            margin-bottom: 18px;
+        }
+
+
+
+        /* --------------------------------
+           EXHIBITION METADATA
+        -------------------------------- */
+
+        .metadata {
+            margin-bottom: 130px;
+        }
+
+        .metadata div {
+            margin: 0;
+        }
+
+
+
+        /* --------------------------------
+           EXHIBITION CONTENT
+        -------------------------------- */
+
+        .exhibition-content {
+            width: 100%;
+        }
+
+
+        /*
+        Each entry consists of:
+
+        IMAGE | TEXT
+
+        Image gets most of the screen.
+        Text occupies a narrow editorial column.
+        */
+
+        .entry {
+            display: grid;
+
+            grid-template-columns:
+                minmax(0, 3fr)
+                minmax(220px, 1fr);
+
+            gap: 40px;
+
+            align-items: start;
+
+            margin-bottom: 170px;
+        }
+
+
+
+        /* --------------------------------
+           IMAGES
+        -------------------------------- */
+
+        .entry-image {
+            display: flex;
+            justify-content: center;
+        }
+
+        .entry-image img {
+            display: block;
+
+            width: auto;
+            height: auto;
+
+            max-width: 100%;
+            max-height: 82vh;
+        }
+
+
+
+        /* --------------------------------
+           TEXT
+        -------------------------------- */
+
+        .entry-text {
+            max-width: 360px;
+        }
+
+        .entry-label {
+            margin-bottom: 10px;
+        }
+
+        .entry-details {
+            margin-bottom: 14px;
+        }
+
+        .entry-description {
+            max-width: 340px;
+        }
+
+        .entry-description p {
+            margin: 0 0 10px 0;
+        }
+
+
+
+        /* --------------------------------
+           HERO
+        -------------------------------- */
+
+        .hero {
+            margin-bottom: 200px;
+        }
+
+        .hero .entry-image img {
+            max-height: 86vh;
+        }
+
+
+
+        /* --------------------------------
+           END MARKER
+        -------------------------------- */
+
+        .end {
+            margin-top: 40px;
+        }
+
+
+
+        /* --------------------------------
+           MOBILE
+        -------------------------------- */
+
+        @media (max-width: 700px) {
+
+            .page {
+                padding: 14px 14px 100px;
+            }
+
+            .metadata {
+                margin-bottom: 90px;
+            }
+
+            .entry {
+                display: block;
+                margin-bottom: 120px;
+            }
+
+            .entry-image {
+                display: block;
+            }
+
+            .entry-image img {
+                width: 100%;
+                max-width: 100%;
+                max-height: none;
+            }
+
+            .entry-text {
+                max-width: 100%;
+                margin-top: 14px;
+            }
+
+            .entry-description {
+                max-width: 500px;
+            }
+
+            .hero {
+                margin-bottom: 140px;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+<div class="page">
+
+
+    <!-- ================================
+         HEADER
+
+         CHANGE EXHIBITION TITLE
+    ================================= -->
+
+    <header>
+
+        <div>
+            “OVERTIME”
+        </div>
+
+        <a href="exhibition.html">
+            ← EXHIBITION
+        </a>
+
+    </header>
+
+
+
+    <!-- ================================
+         METADATA
+
+         CHANGE THESE THREE LINES
+    ================================= -->
+
+    <section class="metadata">
+
+        <div>
+            calarts.losangeles
+        </div>
+
+        <div>
+            30.04.26
+        </div>
+
+        <div>
+            bfa1.photography.foundation.show
+        </div>
+
+    </section>
+
+
+
+    <main class="exhibition-content">
+
+
+        <!-- ============================
+             HERO / CENTRAL IMAGE
+
+             CHANGE:
+             - image filename
+             - artist statement later
+        ============================= -->
+
+        <section class="entry hero">
+
+            <div class="entry-image">
+
+                <img
+                    src="images/exhibition/overtime/overtime-000.jpg"
+                    alt=""
+                >
+
+            </div>
+
+
+            <div class="entry-text">
+
+                <div class="entry-label">
+                    artist statement
+                </div>
+
+                <div class="entry-description">
+
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur
+                        adipiscing elit. Sed do eiusmod tempor
+                        incididunt ut labore et dolore magna aliqua.
+                    </p>
+
+                    <p>
+                        Ut enim ad minim veniam, quis nostrud
+                        exercitation ullamco laboris nisi ut aliquip
+                        ex ea commodo consequat.
+                    </p>
+
+                    <p>
+                        Duis aute irure dolor in reprehenderit in
+                        voluptate velit esse cillum dolore eu fugiat
+                        nulla pariatur.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- ============================
+             DOCUMENTATION 01
+        ============================= -->
+
+        <section class="entry">
+
+            <div class="entry-image">
+
+                <img
+                    src="images/exhibition/overtime/overtime-001.jpg"
+                    alt=""
+                >
+
+            </div>
+
+
+            <div class="entry-text">
+
+                <div class="entry-label">
+                    installation view
+                </div>
+
+                <div class="entry-details">
+                    calarts.losangeles<br>
+                    30.04.26
+                </div>
+
+                <div class="entry-description">
+
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur
+                        adipiscing elit. Sed do eiusmod tempor
+                        incididunt ut labore et dolore magna aliqua.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- ============================
+             DOCUMENTATION 02
+        ============================= -->
+
+        <section class="entry">
+
+            <div class="entry-image">
+
+                <img
+                    src="images/exhibition/overtime/overtime-002.jpg"
+                    alt=""
+                >
+
+            </div>
+
+
+            <div class="entry-text">
+
+                <div class="entry-label">
+                    installation view
+                </div>
+
+                <div class="entry-details">
+                    calarts.losangeles<br>
+                    30.04.26
+                </div>
+
+                <div class="entry-description">
+
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur
+                        adipiscing elit. Ut enim ad minim veniam,
+                        quis nostrud exercitation ullamco laboris.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- ============================
+             DOCUMENTATION 03
+        ============================= -->
+
+        <section class="entry">
+
+            <div class="entry-image">
+
+                <img
+                    src="images/exhibition/overtime/overtime-003.jpg"
+                    alt=""
+                >
+
+            </div>
+
+
+            <div class="entry-text">
+
+                <div class="entry-label">
+                    installation detail
+                </div>
+
+                <div class="entry-details">
+                    calarts.losangeles<br>
+                    30.04.26
+                </div>
+
+                <div class="entry-description">
+
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur
+                        adipiscing elit. Duis aute irure dolor in
+                        reprehenderit in voluptate velit esse.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- ============================
+             DOCUMENTATION 04
+        ============================= -->
+
+        <section class="entry">
+
+            <div class="entry-image">
+
+                <img
+                    src="images/exhibition/overtime/overtime-004.jpg"
+                    alt=""
+                >
+
+            </div>
+
+
+            <div class="entry-text">
+
+                <div class="entry-label">
+                    installation view
+                </div>
+
+                <div class="entry-details">
+                    calarts.losangeles<br>
+                    30.04.26
+                </div>
+
+                <div class="entry-description">
+
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur
+                        adipiscing elit. Excepteur sint occaecat
+                        cupidatat non proident, sunt in culpa qui
+                        officia deserunt mollit anim id est laborum.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- ============================
+             DOCUMENTATION 05
+        ============================= -->
+
+        <section class="entry">
+
+            <div class="entry-image">
+
+                <img
+                    src="images/exhibition/overtime/overtime-005.jpg"
+                    alt=""
+                >
+
+            </div>
+
+
+            <div class="entry-text">
+
+                <div class="entry-label">
+                    installation detail
+                </div>
+
+                <div class="entry-details">
+                    calarts.losangeles<br>
+                    30.04.26
+                </div>
+
+                <div class="entry-description">
+
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur
+                        adipiscing elit. Sed do eiusmod tempor
+                        incididunt ut labore et dolore magna aliqua.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- OPTIONAL END MARKER -->
+
+        <div class="end">
+            [ end ]
+        </div>
+
+
+    </main>
+
+</div>
+
+</body>
+
+</html>
