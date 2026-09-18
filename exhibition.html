@@ -8,7 +8,6 @@
     <title>Exhibition — Victor M. Gonzalez</title>
 
     <style>
-
         * {
             box-sizing: border-box;
         }
@@ -25,6 +24,7 @@
             font-family: Arial, Helvetica, sans-serif;
             font-size: 12px;
             line-height: 1.35;
+            font-weight: 400;
         }
 
         .page {
@@ -39,8 +39,6 @@
         }
 
         a {
-            display: block;
-            width: fit-content;
             color: #000000;
             text-decoration: none;
         }
@@ -49,8 +47,23 @@
             text-decoration: underline;
         }
 
-        @media (max-width: 600px) {
+        .exhibition-list {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
 
+        .exhibition-entry {
+            display: grid;
+            grid-template-columns: 260px auto;
+            width: fit-content;
+        }
+
+        .exhibition-location {
+            padding-right: 40px;
+        }
+
+        @media (max-width: 600px) {
             .page {
                 padding: 14px;
             }
@@ -59,8 +72,22 @@
                 margin-bottom: 55px;
             }
 
-        }
+            .exhibition-list {
+                gap: 18px;
+            }
 
+            .exhibition-entry {
+                display: block;
+            }
+
+            .exhibition-location {
+                padding-right: 0;
+            }
+
+            .exhibition-title {
+                display: block;
+            }
+        }
     </style>
 </head>
 
@@ -73,10 +100,34 @@
         <a href="index.html">← INDEX</a>
     </header>
 
-    <main>
+    <main class="exhibition-list">
 
-        <a href="exhibition-04-30-26.html">04.30.26</a>
-        <a href="exhibition-12-08-25.html">12.08.25</a>
+        <a
+            class="exhibition-entry"
+            href="exhibition-30-04-26.html"
+        >
+            <span class="exhibition-location">
+                calarts.losangeles.30.04.26
+            </span>
+
+            <span class="exhibition-title">
+                “OVERTIME”.bfa1.photography.foundation.show
+            </span>
+        </a>
+
+
+        <a
+            class="exhibition-entry"
+            href="exhibition-08-12-25.html"
+        >
+            <span class="exhibition-location">
+                calarts.losangeles.08.12.25
+            </span>
+
+            <span class="exhibition-title">
+                “Pre-Wash”.bfa1.photography.foundation.show
+            </span>
+        </a>
 
     </main>
 
