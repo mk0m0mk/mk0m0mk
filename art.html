@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Art — Victor M. Gonzalez</title>
+
+    <style>
+
+        * {
+            box-sizing: border-box;
+        }
+
+        html,
+        body {
+            margin: 0;
+            padding: 0;
+            background: #ffffff;
+            color: #000000;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 12px;
+            line-height: 1.35;
+        }
+
+        /* HEADER */
+
+        header {
+            position: fixed;
+            top: 18px;
+            left: 20px;
+            right: 20px;
+
+            display: flex;
+            justify-content: space-between;
+
+            z-index: 10;
+        }
+
+        a {
+            color: #000000;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+
+        /* GALLERY */
+
+        .gallery {
+            width: 100%;
+            padding: 110px 20px 100px;
+        }
+
+        .image {
+            width: 100%;
+            min-height: 85vh;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            margin-bottom: 80px;
+        }
+
+        .image img {
+            display: block;
+
+            max-width: 80vw;
+            max-height: 80vh;
+
+            width: auto;
+            height: auto;
+        }
+
+
+        /* MOBILE */
+
+        @media (max-width: 600px) {
+
+            header {
+                top: 14px;
+                left: 14px;
+                right: 14px;
+            }
+
+            .gallery {
+                padding-left: 14px;
+                padding-right: 14px;
+            }
+
+            .image {
+                min-height: auto;
+                margin-bottom: 100px;
+            }
+
+            .image img {
+                max-width: 100%;
+                max-height: none;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+<header>
+
+    <div>
+        ART
+    </div>
+
+    <a href="index.html">
+        ← INDEX
+    </a>
+
+</header>
+
+
+
+<main class="gallery">
+
+
+    <div class="image">
+        <img src="images/art/001.jpg" alt="">
+    </div>
+
+
+    <div class="image">
+        <img src="images/art/002.jpg" alt="">
+    </div>
+
+
+    <div class="image">
+        <img src="images/art/003.jpg" alt="">
+    </div>
+
+
+    <div class="image">
+        <img src="images/art/004.jpg" alt="">
+    </div>
+
+
+    <div class="image">
+        <img src="images/art/005.jpg" alt="">
+    </div>
+
+
+</main>
+
+
+</body>
+
+</html>
