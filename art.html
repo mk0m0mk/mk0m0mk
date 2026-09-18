@@ -27,21 +27,28 @@
             line-height: 1.35;
         }
 
-        /* HEADER */
+        .page {
+            min-height: 100vh;
+            padding: 18px 20px;
+        }
 
         header {
-            position: fixed;
-            top: 18px;
-            left: 20px;
-            right: 20px;
-
             display: flex;
             justify-content: space-between;
+            margin-bottom: 70px;
+        }
 
-            z-index: 10;
+        section {
+            margin-bottom: 45px;
+        }
+
+        .section-title {
+            margin-bottom: 8px;
         }
 
         a {
+            display: block;
+            width: fit-content;
             color: #000000;
             text-decoration: none;
         }
@@ -50,115 +57,66 @@
             text-decoration: underline;
         }
 
-
-        /* GALLERY */
-
-        .gallery {
-            width: 100%;
-            padding: 110px 20px 100px;
-        }
-
-        .image {
-            width: 100%;
-            min-height: 85vh;
-
-            display: flex;
-            justify-content: center;
-            align-items: center;
-
-            margin-bottom: 80px;
-        }
-
-        .image img {
+        .back {
             display: block;
-
-            max-width: 80vw;
-            max-height: 80vh;
-
-            width: auto;
-            height: auto;
         }
 
-
-        /* MOBILE */
+        p {
+            margin: 0;
+        }
 
         @media (max-width: 600px) {
 
+            .page {
+                padding: 14px;
+            }
+
             header {
-                top: 14px;
-                left: 14px;
-                right: 14px;
-            }
-
-            .gallery {
-                padding-left: 14px;
-                padding-right: 14px;
-            }
-
-            .image {
-                min-height: auto;
-                margin-bottom: 100px;
-            }
-
-            .image img {
-                max-width: 100%;
-                max-height: none;
+                margin-bottom: 55px;
             }
 
         }
 
     </style>
-
 </head>
-
 
 <body>
 
+<div class="page">
 
-<header>
-
-    <div>
-        ART
-    </div>
-
-    <a href="index.html">
-        ← INDEX
-    </a>
-
-</header>
+    <header>
+        <div>ART</div>
+        <a class="back" href="index.html">← INDEX</a>
+    </header>
 
 
+    <main>
 
-<main class="gallery">
-
-
-    <div class="image">
-        <img src="images/art/001.jpg" alt="">
-    </div>
-
-
-    <div class="image">
-        <img src="images/art/002.jpg" alt="">
-    </div>
+        <section>
+            <div class="section-title">SOUND</div>
+            <p>coming soon...</p>
+        </section>
 
 
-    <div class="image">
-        <img src="images/art/003.jpg" alt="">
-    </div>
+        <section>
+            <div class="section-title">STREET</div>
+
+            <a href="street-14-06-25.html">14.06.25</a>
+            <a href="street-24-05-25.html">24.05.25</a>
+            <a href="street-23-09-24.html">23.09.24</a>
+        </section>
 
 
-    <div class="image">
-        <img src="images/art/004.jpg" alt="">
-    </div>
+        <section>
+            <div class="section-title">FINE ART</div>
 
+            <a href="photography.html">PHOTOGRAPHY</a>
+            <a href="canvas.html">CANVAS</a>
+        </section>
 
-    <div class="image">
-        <img src="images/art/005.jpg" alt="">
-    </div>
+    </main>
 
-
-</main>
-
+</div>
 
 </body>
 
