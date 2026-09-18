@@ -1,0 +1,196 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Victor Gonzalez — Artist / Photographer</title>
+
+    <style>
+
+        /* ------------------------------
+           BASE
+        ------------------------------ */
+
+        * {
+            box-sizing: border-box;
+        }
+
+        html,
+        body {
+            margin: 0;
+            padding: 0;
+            background: #ffffff;
+            color: #000000;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 12px;
+            line-height: 1.35;
+            font-weight: 400;
+        }
+
+
+        /* ------------------------------
+           PAGE
+        ------------------------------ */
+
+        .page {
+            min-height: 100vh;
+            padding: 18px 20px;
+            display: flex;
+            flex-direction: column;
+        }
+
+
+        /* ------------------------------
+           HEADER
+        ------------------------------ */
+
+        header {
+            margin-bottom: 70px;
+        }
+
+        .name {
+            margin: 0;
+        }
+
+        .description {
+            margin: 0;
+        }
+
+
+        /* ------------------------------
+           LINKS
+        ------------------------------ */
+
+        nav {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+        }
+
+        a {
+            color: #000000;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+
+        /* Main project links */
+
+        .projects {
+            margin-bottom: 55px;
+        }
+
+        .projects a {
+            display: block;
+        }
+
+
+        /* Information links */
+
+        .information a {
+            display: block;
+        }
+
+
+        /* ------------------------------
+           FOOTER
+        ------------------------------ */
+
+        footer {
+            margin-top: auto;
+            padding-top: 70px;
+        }
+
+
+        /* ------------------------------
+           MOBILE
+        ------------------------------ */
+
+        @media (max-width: 600px) {
+
+            .page {
+                padding: 14px;
+            }
+
+            header {
+                margin-bottom: 55px;
+            }
+
+            .projects {
+                margin-bottom: 45px;
+            }
+
+        }
+
+    </style>
+</head>
+
+
+<body>
+
+    <div class="page">
+
+        <header>
+            <div class="name">
+                VICTOR GONZALEZ (mk0m0mk)
+            </div>
+
+            <div class="description">
+                ARTIST / PHOTOGRAPHER
+            </div>
+        </header>
+
+
+        <main>
+
+            <nav class="projects">
+
+                <a href="#">
+                    01 — ART
+                </a>
+
+                <a href="#">
+                    02 — EXHIBITION
+                </a>
+
+                <a href="#">
+                    03 — COMMERCIAL
+                </a>
+
+            </nav>
+
+
+            <nav class="information">
+
+                <a href="#">
+                    CV
+                </a>
+
+                <a href="mailto:YOUR-EMAIL@EXAMPLE.COM">
+                    CONTACT
+                </a>
+
+            </nav>
+
+        </main>
+
+
+        <footer>
+            [ last updated 17.09.26 ]
+        </footer>
+
+    </div>
+
+</body>
+
+</html>
+```
