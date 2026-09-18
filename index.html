@@ -5,13 +5,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Victor Gonzalez — Artist / Photographer</title>
+    <title>Victor M. Gonzalez — Artist / Photographer</title>
 
     <style>
-
-        /* ------------------------------
-           BASE
-        ------------------------------ */
 
         * {
             box-sizing: border-box;
@@ -32,11 +28,6 @@
             font-weight: 400;
         }
 
-
-        /* ------------------------------
-           PAGE
-        ------------------------------ */
-
         .page {
             min-height: 100vh;
             padding: 18px 20px;
@@ -44,27 +35,14 @@
             flex-direction: column;
         }
 
-
-        /* ------------------------------
-           HEADER
-        ------------------------------ */
-
         header {
             margin-bottom: 70px;
         }
 
-        .name {
-            margin: 0;
-        }
-
+        .name,
         .description {
             margin: 0;
         }
-
-
-        /* ------------------------------
-           LINKS
-        ------------------------------ */
 
         nav {
             display: flex;
@@ -81,38 +59,47 @@
             text-decoration: underline;
         }
 
+        .instagram {
+            transition: opacity 0.15s ease;
+        }
 
-        /* Main project links */
+        .instagram:hover {
+            opacity: 0.45;
+        }
 
         .projects {
             margin-bottom: 55px;
         }
 
-        .projects a {
-            display: block;
-        }
-
-
-        /* Information links */
-
+        .projects a,
         .information a {
             display: block;
         }
 
+        /* CONTACT */
 
-        /* ------------------------------
-           FOOTER
-        ------------------------------ */
+        .contact {
+            position: relative;
+            cursor: default;
+        }
+
+        .contact-details {
+            display: none;
+            position: absolute;
+            left: 100%;
+            top: 0;
+            margin-left: 14px;
+            white-space: nowrap;
+        }
+
+        .contact:hover .contact-details {
+            display: block;
+        }
 
         footer {
             margin-top: auto;
             padding-top: 70px;
         }
-
-
-        /* ------------------------------
-           MOBILE
-        ------------------------------ */
 
         @media (max-width: 600px) {
 
@@ -128,66 +115,84 @@
                 margin-bottom: 45px;
             }
 
+            .contact-details {
+                position: static;
+                margin-left: 0;
+                margin-top: 4px;
+            }
         }
 
     </style>
 </head>
 
-
 <body>
 
-    <div class="page">
+<div class="page">
 
-        <header>
-            <div class="name">
-                VICTOR GONZALEZ (mk0m0mk)
+    <header>
+
+        <div class="name">
+            VICTOR M. GONZALEZ
+            <a
+                class="instagram"
+                href="https://www.instagram.com/mk0m0mk/"
+                target="_blank"
+                rel="noopener noreferrer"
+            >@mk0m0mk</a>
+        </div>
+
+        <div class="description">
+            ARTIST / PHOTOGRAPHER
+        </div>
+
+    </header>
+
+
+    <main>
+
+        <nav class="projects">
+
+            <a href="#">
+                01 — ART
+            </a>
+
+            <a href="#">
+                02 — EXHIBITION
+            </a>
+
+            <a href="#">
+                03 — COMMERCIAL
+            </a>
+
+        </nav>
+
+
+        <nav class="information">
+
+            <a href="Victor-M-Gonzalez-CV.pdf" download>
+                CV
+            </a>
+
+            <div class="contact">
+
+                CONTACT
+
+                <span class="contact-details">
+                    760-641-5405 &nbsp; victorgonzalez@students.calarts.edu
+                </span>
+
             </div>
 
-            <div class="description">
-                ARTIST / PHOTOGRAPHER
-            </div>
-        </header>
+        </nav>
+
+    </main>
 
 
-        <main>
+    <footer>
+        [ last updated 17.09.26 ]
+    </footer>
 
-            <nav class="projects">
-
-                <a href="#">
-                    01 — ART
-                </a>
-
-                <a href="#">
-                    02 — EXHIBITION
-                </a>
-
-                <a href="#">
-                    03 — COMMERCIAL
-                </a>
-
-            </nav>
-
-
-            <nav class="information">
-
-                <a href="#">
-                    CV
-                </a>
-
-                <a href="mailto:YOUR-EMAIL@EXAMPLE.COM">
-                    CONTACT
-                </a>
-
-            </nav>
-
-        </main>
-
-
-        <footer>
-            [ last updated 17.09.26 ]
-        </footer>
-
-    </div>
+</div>
 
 </body>
 
