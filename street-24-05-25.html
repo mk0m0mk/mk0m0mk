@@ -37,9 +37,6 @@
             text-decoration: underline;
         }
 
-
-        /* HEADER */
-
         header {
             position: fixed;
             top: 18px;
@@ -58,9 +55,6 @@
             pointer-events: auto;
         }
 
-
-        /* GALLERY */
-
         .gallery {
             width: 100%;
             padding: 100px 20px 120px;
@@ -75,6 +69,10 @@
             align-items: center;
         }
 
+        figure:last-child {
+            margin-bottom: 0;
+        }
+
         figure img {
             display: block;
 
@@ -84,9 +82,6 @@
             width: auto;
             height: auto;
         }
-
-
-        /* IMAGE TEXT */
 
         figcaption {
             width: 100%;
@@ -98,8 +93,14 @@
             max-width: 500px;
         }
 
+        .end-marker {
+            padding: 0 20px;
+        }
 
-        /* MOBILE */
+        .site-footer {
+            padding: 0 20px 18px;
+            margin-top: 100px;
+        }
 
         @media (max-width: 600px) {
 
@@ -126,334 +127,69 @@
                 max-width: 100%;
             }
 
+            .end-marker {
+                padding: 0 14px;
+            }
+
+            .site-footer {
+                padding: 0 14px 14px;
+                margin-top: 80px;
+            }
+
         }
 
     </style>
-
 </head>
-
 
 <body>
 
-
 <header>
-
-    <div>
-        24.05.25
-    </div>
-
-    <a href="art.html">
-        ← ART
-    </a>
-
+    <div>24.05.25</div>
+    <a href="art.html">← ART</a>
 </header>
 
+<main class="gallery" id="gallery"></main>
 
-<main class="gallery">
+<div class="end-marker">
+    [ end ]
+</div>
 
+<footer class="site-footer">
+    [ © Victor M. Gonzalez, 2026 ]
+</footer>
 
-    <!-- 000 -->
 
-    <figure>
-        <img src="images/24.05.25/24.05.25-000.jpg" alt="">
+<script>
 
-        <figcaption>
-            <div class="image-description">
-                "Mi Luz" - 000 | Tequila, Jalisco | Sony ZVE-10
-            </div>
-        </figcaption>
-    </figure>
+    const gallery = document.getElementById("gallery");
 
+    const folder = "images/24.05.25";
+    const prefix = "24.05.25-";
+    const imageCount = 22;
 
-    <!-- 001 -->
+    for (let i = 0; i < imageCount; i++) {
 
-    <figure>
-        <img src="images/24.05.25/24.05.25-001.jpg" alt="">
+        const number = String(i).padStart(3, "0");
 
-        <figcaption>
-            <div class="image-description">
-                "Viene de las Montañas" - 001 | Tequila, Jalisco | Sony ZVE-10
-            </div>
-        </figcaption>
-    </figure>
+        const figure = document.createElement("figure");
 
+        figure.innerHTML = `
+            <img
+                src="${folder}/${prefix}${number}.jpg"
+                alt=""
+            >
 
-    <!-- 002 -->
+            <figcaption>
+                <div class="image-description">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                </div>
+            </figcaption>
+        `;
 
-    <figure>
-        <img src="images/24.05.25/24.05.25-002.jpg" alt="">
+        gallery.appendChild(figure);
+    }
 
-        <figcaption>
-            <div class="image-description">
-                "Aburrido" - 002 | Tequila, Jalisco | Sony ZVE-10
-            </div>
-        </figcaption>
-    </figure>
-
-
-    <!-- 003 -->
-
-    <figure>
-        <img src="images/24.05.25/24.05.25-003.jpg" alt="">
-
-        <figcaption>
-            <div class="image-description">
-                "Ruco Perdido" - 003 | Tequila, Jalisco | Sony ZVE-10
-            </div>
-        </figcaption>
-    </figure>
-
-
-    <!-- 004 -->
-
-    <figure>
-        <img src="images/24.05.25/24.05.25-004.jpg" alt="">
-
-        <figcaption>
-            <div class="image-description">
-                "Ruco Sincero" - 004 | Tequila, Jalisco | Sony ZVE-10
-            </div>
-        </figcaption>
-    </figure>
-
-
-    <!-- 005 -->
-
-    <figure>
-        <img src="images/24.05.25/24.05.25-005.jpg" alt="">
-
-        <figcaption>
-            <div class="image-description">
-                "Untitled (ciego)" - 005 | Tequila, Jalisco | Sony ZVE-10
-            </div>
-        </figcaption>
-    </figure>
-
-
-    <!-- 006 -->
-
-    <figure>
-        <img src="images/24.05.25/24.05.25-006.jpg" alt="">
-
-        <figcaption>
-            <div class="image-description">
-                "Ruco Rustico" - 006 | Tequila, Jalisco | Sony ZVE-10
-            </div>
-        </figcaption>
-    </figure>
-
-
-    <!-- 007 -->
-
-    <figure>
-        <img src="images/24.05.25/24.05.25-007.jpg" alt="">
-
-        <figcaption>
-            <div class="image-description">
-                "Tetrápodo" - 007 | Tequila, Jalisco | Sony ZVE-10
-            </div>
-        </figcaption>
-    </figure>
-
-
-    <!-- 008 -->
-
-    <figure>
-        <img src="images/24.05.25/24.05.25-008.jpg" alt="">
-
-        <figcaption>
-            <div class="image-description">
-                "Untitled (orejas)" - 008 | Tequila, Jalisco | Sony ZVE-10
-            </div>
-        </figcaption>
-    </figure>
-
-
-    <!-- 009 -->
-
-    <figure>
-        <img src="images/24.05.25/24.05.25-009.jpg" alt="">
-
-        <figcaption>
-            <div class="image-description">
-                "Doble Hexá" - 009 | Tequila, Jalisco | Sony ZVE-10
-            </div>
-        </figcaption>
-    </figure>
-
-
-    <!-- 010 -->
-
-    <figure>
-        <img src="images/24.05.25/24.05.25-010.jpg" alt="">
-
-        <figcaption>
-            <div class="image-description">
-                "Untitled (Palenquetas)" - 010 | Tequila, Jalisco | Sony ZVE-10
-            </div>
-        </figcaption>
-    </figure>
-
-
-    <!-- 011 -->
-
-    <figure>
-        <img src="images/24.05.25/24.05.25-011.jpg" alt="">
-
-        <figcaption>
-            <div class="image-description">
-                "La Diversión los Espera" - 011 | Tequila, Jalisco | Sony ZVE-10
-            </div>
-        </figcaption>
-    </figure>
-
-
-    <!-- 012 -->
-
-    <figure>
-        <img src="images/24.05.25/24.05.25-012.jpg" alt="">
-
-        <figcaption>
-            <div class="image-description">
-                "Infancia contra la Fiscalía General de la República" - 012 | Tequila, Jalisco | Sony ZVE-10
-            </div>
-        </figcaption>
-    </figure>
-
-
-    <!-- 013 -->
-
-    <figure>
-        <img src="images/24.05.25/24.05.25-013.jpg" alt="">
-
-        <figcaption>
-            <div class="image-description">
-                "Callejón de Hambre" - 013 | Tequila, Jalisco | Sony ZVE-10
-            </div>
-        </figcaption>
-    </figure>
-
-
-    <!-- 014 -->
-
-    <figure>
-        <img src="images/24.05.25/24.05.25-014.jpg" alt="">
-
-        <figcaption>
-            <div class="image-description">
-                "Anhelo" - 014 | Tequila, Jalisco | Sony ZVE-10
-            </div>
-        </figcaption>
-    </figure>
-
-
-    <!-- 015 -->
-
-    <figure>
-        <img src="images/24.05.25/24.05.25-015.jpg" alt="">
-
-        <figcaption>
-            <div class="image-description">
-                "Carnicero y su Futuro" - 015 | Tequila, Jalisco | Sony ZVE-10
-            </div>
-        </figcaption>
-    </figure>
-
-
-    <!-- 016 -->
-
-    <figure>
-        <img src="images/24.05.25/24.05.25-016.jpg" alt="">
-
-        <figcaption>
-            <div class="image-description">
-                "Los No Deseados" - 016 | Tequila, Jalisco | Sony ZVE-10
-            </div>
-        </figcaption>
-    </figure>
-
-
-    <!-- 017 -->
-
-    <figure>
-        <img src="images/24.05.25/24.05.25-017.jpg" alt="">
-
-        <figcaption>
-            <div class="image-description">
-                "Nietos" - 017 | Tequila, Jalisco | Sony ZVE-10
-            </div>
-        </figcaption>
-    </figure>
-
-
-    <!-- 018 -->
-
-    <figure>
-        <img src="images/24.05.25/24.05.25-018.jpg" alt="">
-
-        <figcaption>
-            <div class="image-description">
-                "Cachuchas de Basura" - 018 | Tequila, Jalisco | Sony ZVE-10
-            </div>
-        </figcaption>
-    </figure>
-
-
-    <!-- 019 -->
-
-    <figure>
-        <img src="images/24.05.25/24.05.25-019.jpg" alt="">
-
-        <figcaption>
-            <div class="image-description">
-                "Bicicletas" - 019 | Tequila, Jalisco | Sony ZVE-10
-            </div>
-        </figcaption>
-    </figure>
-
-
-    <!-- 020 -->
-
-    <figure>
-        <img src="images/24.05.25/24.05.25-020.jpg" alt="">
-
-        <figcaption>
-            <div class="image-description">
-                "Los Placéros" - 020 | Tequila, Jalisco | Sony ZVE-10
-            </div>
-        </figcaption>
-    </figure>
-
-
-    <!-- 021 -->
-
-    <figure>
-        <img src="images/24.05.25/24.05.25-021.jpg" alt="">
-
-        <figcaption>
-            <div class="image-description">
-                "El Carrizal" - 021 | Tequila, Jalisco | Sony ZVE-10
-            </div>
-        </figcaption>
-    </figure>
-
-
-    <!-- 022 -->
-  
-    <figure>
-        <img src="images/24.05.25/24.05.25-022.jpg" alt="">
-
-        <figcaption>
-            <div class="image-description">
-                "Cuidado con el Gobierno" - 022 | Tequila, Jalisco | Sony ZVE-10
-            </div>
-        </figcaption>
-    </figure>
-    
-
-</main>
-
+</script>
 
 </body>
-
 </html>
