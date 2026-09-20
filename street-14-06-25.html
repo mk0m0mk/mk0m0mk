@@ -167,11 +167,43 @@
     const prefix = "14.06.25-";
     const imageCount = 10;
 
+
+    /* --------------------------------
+       IMAGE CAPTIONS
+
+       Caption 0 = 24.05.25-000.jpg
+       Caption 1 = 24.05.25-001.jpg
+       Caption 2 = 24.05.25-002.jpg
+       etc.
+    -------------------------------- */
+
+    const captions = [
+
+        "no.kings.protest.PSP.asshole - 000",
+        "no.kings.protest.PSP.signage - 001.",
+        "no.kings.protest.PSP.hell - 002.",
+        "no.kings.protest.PSP.kristallnacht - 003.",
+        "no.kings.protest.PSP.untitled - 004.",
+        "no.kings.protest.PSP.de.asada - 005.",
+        "no.kings.protest.PSP.untitled - 006.",
+        "no.kings.protest.PSP.teeth - 007.",
+        "no.kings.protest.PSP.tessies - 008.",
+        "no.kings.protest.PSP.untitled - 009.",
+
+    ];
+
+
+    /* --------------------------------
+       GENERATE GALLERY
+    -------------------------------- */
+
     for (let i = 0; i < imageCount; i++) {
 
         const number = String(i).padStart(3, "0");
 
         const figure = document.createElement("figure");
+
+        const caption = captions[i] || "";
 
         figure.innerHTML = `
             <img
@@ -179,11 +211,17 @@
                 alt=""
             >
 
-            <figcaption>
-                <div class="image-description">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                </div>
-            </figcaption>
+            ${
+                caption
+                ? `
+                    <figcaption>
+                        <div class="image-description">
+                            ${caption}
+                        </div>
+                    </figcaption>
+                  `
+                : ""
+            }
         `;
 
         gallery.appendChild(figure);
