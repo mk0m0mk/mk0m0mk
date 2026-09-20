@@ -167,11 +167,55 @@
     const prefix = "24.05.25-";
     const imageCount = 22;
 
+
+    /* --------------------------------
+       IMAGE CAPTIONS
+
+       Caption 0 = 24.05.25-000.jpg
+       Caption 1 = 24.05.25-001.jpg
+       Caption 2 = 24.05.25-002.jpg
+       etc.
+    -------------------------------- */
+
+    const captions = [
+
+        "Caption for image 000.",
+        "Caption for image 001.",
+        "Caption for image 002.",
+        "Caption for image 003.",
+        "Caption for image 004.",
+        "Caption for image 005.",
+        "Caption for image 006.",
+        "Caption for image 007.",
+        "Caption for image 008.",
+        "Caption for image 009.",
+        "Caption for image 010.",
+        "Caption for image 011.",
+        "Caption for image 012.",
+        "Caption for image 013.",
+        "Caption for image 014.",
+        "Caption for image 015.",
+        "Caption for image 016.",
+        "Caption for image 017.",
+        "Caption for image 018.",
+        "Caption for image 019.",
+        "Caption for image 020.",
+        "Caption for image 021."
+
+    ];
+
+
+    /* --------------------------------
+       GENERATE GALLERY
+    -------------------------------- */
+
     for (let i = 0; i < imageCount; i++) {
 
         const number = String(i).padStart(3, "0");
 
         const figure = document.createElement("figure");
+
+        const caption = captions[i] || "";
 
         figure.innerHTML = `
             <img
@@ -179,17 +223,22 @@
                 alt=""
             >
 
-            <figcaption>
-                <div class="image-description">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                </div>
-            </figcaption>
+            ${
+                caption
+                ? `
+                    <figcaption>
+                        <div class="image-description">
+                            ${caption}
+                        </div>
+                    </figcaption>
+                  `
+                : ""
+            }
         `;
 
         gallery.appendChild(figure);
     }
 
 </script>
-
 </body>
 </html>
