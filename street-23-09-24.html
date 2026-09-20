@@ -163,9 +163,43 @@
 
     const gallery = document.getElementById("gallery");
 
-    const folder = "images/23.09.24";
-    const prefix = "23.09.24-";
+    const folder = "images/14.06.25";
+    const prefix = "14.06.25-";
     const imageCount = 14;
+
+
+    /* --------------------------------
+       IMAGE CAPTIONS
+
+       Caption 0 = 24.05.25-000.jpg
+       Caption 1 = 24.05.25-001.jpg
+       Caption 2 = 24.05.25-002.jpg
+       etc.
+    -------------------------------- */
+
+    const captions = [
+
+        "Chinatown.LA.protest - 000",
+        "Chinatown.LA.dust.on.lens - 001.",
+        "Chinatown.LA.storefront - 002.",
+        "Chinatown.LA.iphone.wallpaper - 003.",
+        "Chinatown.LA.deux - 004.",
+        "Chinatown.LA.untitled - 005.",
+        "Chinatown.LA.untitled - 006.",
+        "Chinatown.LA.untitled - 007.",
+        "Chinatown.LA.bags - 008.",
+        "Chinatown.LA.untitled - 009.",
+        "Chinatown.LA.untitled - 010.",
+        "Chinatown.LA.tuyet's - 011.",
+        "Chinatown.LA.untitled - 012.",
+        "Chinatown.LA.tights - 013.",
+
+    ];
+
+
+    /* --------------------------------
+       GENERATE GALLERY
+    -------------------------------- */
 
     for (let i = 0; i < imageCount; i++) {
 
@@ -173,17 +207,25 @@
 
         const figure = document.createElement("figure");
 
+        const caption = captions[i] || "";
+
         figure.innerHTML = `
             <img
                 src="${folder}/${prefix}${number}.jpg"
                 alt=""
             >
 
-            <figcaption>
-                <div class="image-description">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                </div>
-            </figcaption>
+            ${
+                caption
+                ? `
+                    <figcaption>
+                        <div class="image-description">
+                            ${caption}
+                        </div>
+                    </figcaption>
+                  `
+                : ""
+            }
         `;
 
         gallery.appendChild(figure);
