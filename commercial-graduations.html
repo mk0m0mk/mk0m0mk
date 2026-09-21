@@ -97,7 +97,18 @@
                 max-width: 100%;
                 max-height: none;
             }
+            
+figcaption {
+    width: 100%;
+    max-width: 700px;
+    margin-top: 12px;
+}
 
+.image-description {
+    max-width: 500px;
+}
+
+            
             .end-marker {
                 padding: 0 14px;
             }
@@ -128,25 +139,56 @@
 </footer>
 
 <script>
+
     const gallery = document.getElementById("gallery");
 
     const folder = "images/commercial/graduations";
     const prefix = "graduations-";
     const imageCount = 9;
 
+    const captions = [
+        "encino.alyson.joshua.tree.000",
+        "encino.alyson.joshua.tree.001",
+        "encino.alyson.joshua.tree.002",
+        "encino.alyson.joshua.tree.003",
+        "hernandez.marisol.CC.000",
+        "hernandez.marisol.CC.001",
+        "hernandez.marisol.CC.002",
+        "hernandez.marisol.CC.003",
+        "hernandez.marisol.CC.004"
+    ];
+
     for (let i = 0; i < imageCount; i++) {
+
         const number = String(i).padStart(3, "0");
+        const caption = captions[i] || "";
+
         const figure = document.createElement("figure");
 
         figure.innerHTML = `
-            <img
-                src="${folder}/${prefix}${number}.jpg"
-                alt=""
-            >
+            <div>
+                <img
+                    src="${folder}/${prefix}${number}.jpg"
+                    alt=""
+                >
+
+                ${
+                    caption
+                    ? `
+                        <figcaption>
+                            <div class="image-description">
+                                ${caption}
+                            </div>
+                        </figcaption>
+                      `
+                    : ""
+                }
+            </div>
         `;
 
         gallery.appendChild(figure);
     }
+
 </script>
 
 </body>
