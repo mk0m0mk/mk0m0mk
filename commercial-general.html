@@ -8,7 +8,10 @@
     <title>general — Victor M. Gonzalez</title>
 
     <style>
-        * { box-sizing: border-box; }
+
+        * {
+            box-sizing: border-box;
+        }
 
         html,
         body {
@@ -22,6 +25,7 @@
             font-family: Arial, Helvetica, sans-serif;
             font-size: 12px;
             line-height: 1.35;
+            font-weight: 400;
         }
 
         a {
@@ -38,9 +42,17 @@
             top: 18px;
             left: 20px;
             right: 20px;
+
             display: flex;
             justify-content: space-between;
+
             z-index: 100;
+            pointer-events: none;
+        }
+
+        header a,
+        header div {
+            pointer-events: auto;
         }
 
         .gallery {
@@ -49,26 +61,44 @@
         }
 
         figure {
+            margin: 0;
             width: 100%;
-            margin: 0 0 140px;
+
             display: flex;
             justify-content: center;
         }
 
-        figure:last-child {
-            margin-bottom: 0;
+        .image-entry {
+            width: fit-content;
+            max-width: 70vw;
         }
 
         figure img {
             display: block;
+
             max-width: 70vw;
             max-height: 75vh;
+
             width: auto;
             height: auto;
         }
 
+        figcaption {
+            margin-top: 12px;
+            max-width: 700px;
+        }
+
+        .image-title {
+            margin-bottom: 2px;
+        }
+
+        .image-link {
+            display: block;
+            overflow-wrap: anywhere;
+        }
+
         .end-marker {
-            padding: 0 20px;
+            padding: 120px 20px 0;
         }
 
         .site-footer {
@@ -77,6 +107,7 @@
         }
 
         @media (max-width: 600px) {
+
             header {
                 top: 14px;
                 left: 14px;
@@ -87,8 +118,8 @@
                 padding: 90px 14px 100px;
             }
 
-            figure {
-                margin-bottom: 100px;
+            .image-entry {
+                max-width: 100%;
             }
 
             figure img {
@@ -97,55 +128,72 @@
             }
 
             .end-marker {
-                padding: 0 14px;
+                padding: 100px 14px 0;
             }
 
             .site-footer {
                 padding: 0 14px 14px;
                 margin-top: 80px;
             }
+
         }
+
     </style>
 </head>
 
 <body>
+
 
 <header>
     <div>general</div>
     <a href="commercial.html">← COMMERCIAL</a>
 </header>
 
-<main class="gallery" id="gallery"></main>
+
+<main class="gallery">
+
+    <figure>
+
+        <div class="image-entry">
+
+            <img
+                src="images/commercial/general/general-000.jpg"
+                alt=""
+            >
+
+            <figcaption>
+
+                <div class="image-title">
+                    calarts.accepted.students.day.11.04.26
+                </div>
+
+                <a
+                    class="image-link"
+                    href="https://www.photos.calarts.edu/Institute/Accepted-Student-Event-4-11-2026"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    https://www.photos.calarts.edu/Institute/Accepted-Student-Event-4-11-2026
+                </a>
+
+            </figcaption>
+
+        </div>
+
+    </figure>
+
+</main>
+
 
 <div class="end-marker">
     [ end ]
 </div>
 
+
 <footer class="site-footer">
     [ © Victor M. Gonzalez, 2026 ]
 </footer>
 
-<script>
-    const gallery = document.getElementById("gallery");
-
-    const folder = "images/commercial/general";
-    const prefix = "general-";
-    const imageCount = 4;
-
-    for (let i = 0; i < imageCount; i++) {
-        const number = String(i).padStart(3, "0");
-        const figure = document.createElement("figure");
-
-        figure.innerHTML = `
-            <img
-                src="${folder}/${prefix}${number}.jpg"
-                alt=""
-            >
-        `;
-
-        gallery.appendChild(figure);
-    }
-</script>
 
 </body>
 </html>
