@@ -8,7 +8,10 @@
     <title>performances — Victor M. Gonzalez</title>
 
     <style>
-        * { box-sizing: border-box; }
+
+        * {
+            box-sizing: border-box;
+        }
 
         html,
         body {
@@ -22,6 +25,7 @@
             font-family: Arial, Helvetica, sans-serif;
             font-size: 12px;
             line-height: 1.35;
+            font-weight: 400;
         }
 
         a {
@@ -38,9 +42,17 @@
             top: 18px;
             left: 20px;
             right: 20px;
+
             display: flex;
             justify-content: space-between;
+
             z-index: 100;
+            pointer-events: none;
+        }
+
+        header a,
+        header div {
+            pointer-events: auto;
         }
 
         .gallery {
@@ -49,8 +61,9 @@
         }
 
         figure {
+            margin: 0 0 140px 0;
             width: 100%;
-            margin: 0 0 140px;
+
             display: flex;
             justify-content: center;
         }
@@ -59,12 +72,33 @@
             margin-bottom: 0;
         }
 
+        .image-entry {
+            width: fit-content;
+            max-width: 70vw;
+        }
+
         figure img {
             display: block;
+
             max-width: 70vw;
             max-height: 75vh;
+
             width: auto;
             height: auto;
+        }
+
+        figcaption {
+            margin-top: 12px;
+            max-width: 700px;
+        }
+
+        .image-title {
+            margin-bottom: 2px;
+        }
+
+        .image-link {
+            display: block;
+            overflow-wrap: anywhere;
         }
 
         .end-marker {
@@ -77,6 +111,7 @@
         }
 
         @media (max-width: 600px) {
+
             header {
                 top: 14px;
                 left: 14px;
@@ -89,6 +124,10 @@
 
             figure {
                 margin-bottom: 100px;
+            }
+
+            .image-entry {
+                max-width: 100%;
             }
 
             figure img {
@@ -104,48 +143,134 @@
                 padding: 0 14px 14px;
                 margin-top: 80px;
             }
+
         }
+
     </style>
 </head>
 
 <body>
+
 
 <header>
     <div>performances</div>
     <a href="commercial.html">← COMMERCIAL</a>
 </header>
 
+
 <main class="gallery" id="gallery"></main>
+
 
 <div class="end-marker">
     [ end ]
 </div>
 
+
 <footer class="site-footer">
     [ © Victor M. Gonzalez, 2026 ]
 </footer>
 
+
 <script>
+
     const gallery = document.getElementById("gallery");
 
-    const folder = "images/commercial/performances";
-    const prefix = "performances-";
-    const imageCount = 5;
+    const entries = [
 
-    for (let i = 0; i < imageCount; i++) {
-        const number = String(i).padStart(3, "0");
+        {
+            image: "performances-000.jpg",
+            title: "meta.05.05.26",
+            link: "https://www.photos.calarts.edu/School-of-Theater/Scenes-from-Metamorphoses-5-5-2026"
+        },
+
+        {
+            image: "performances-001.jpg",
+            title: "coyote.makes.a.world.02.05.26",
+            link: "https://www.photos.calarts.edu/School-of-Music/Coyote-Makes-a-World-5-2-2026"
+        },
+
+        {
+            image: "performances-002.jpg",
+            title: "half.god.22.04.26",
+            link: "https://www.photos.calarts.edu/School-of-Theater/Half-God-of-Rainfall-4-22-2026"
+        },
+
+        {
+            image: "performances-003.jpg",
+            title: "an.enemy.of.the.people.18.03.26",
+            link: "https://www.photos.calarts.edu/School-of-Theater/An-Enemy-of-the-People-3-18-2026"
+        },
+
+        {
+            image: "performances-004.jpg",
+            title: "is.god.is.11.02.26",
+            link: "https://www.photos.calarts.edu/School-of-Theater/Isgodis"
+        },
+
+        {
+            image: "performances-005.jpg",
+            title: "the.misanthrope.05.11.25",
+            link: "https://www.photos.calarts.edu/School-of-Theater/The-Misanthrope-11-5-2025"
+        },
+
+        {
+            image: "performances-006.jpg",
+            title: "esp.night.3.27.09.25",
+            link: "https://www.photos.calarts.edu/School-of-Music/ESP-Night-3-9-27-2025"
+        },
+
+        {
+            image: "performances-007.jpg",
+            title: "esp.night.2.26.09.25",
+            link: "https://www.photos.calarts.edu/School-of-Music/ESP-Night-2-9-26-2025"
+        },
+
+        {
+            image: "performances-008.jpg",
+            title: "esp.night.1.25.09.25",
+            link: "https://www.photos.calarts.edu/School-of-Music/ESP-Night-one-9-25-2025"
+        }
+
+    ];
+
+
+    for (const entry of entries) {
+
         const figure = document.createElement("figure");
 
         figure.innerHTML = `
-            <img
-                src="${folder}/${prefix}${number}.jpg"
-                alt=""
-            >
+            <div class="image-entry">
+
+                <img
+                    src="images/commercial/performances/${entry.image}"
+                    alt=""
+                >
+
+                <figcaption>
+
+                    <div class="image-title">
+                        ${entry.title}
+                    </div>
+
+                    <a
+                        class="image-link"
+                        href="${entry.link}"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        ${entry.link}
+                    </a>
+
+                </figcaption>
+
+            </div>
         `;
 
         gallery.appendChild(figure);
     }
+
 </script>
+
 
 </body>
 </html>
