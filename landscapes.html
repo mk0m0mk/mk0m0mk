@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>landscapes — Victor M. Gonzalez</title>
+
+    <style>
+
+        * {
+            box-sizing: border-box;
+        }
+
+        html,
+        body {
+            margin: 0;
+            padding: 0;
+            background: #ffffff;
+            color: #000000;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 12px;
+            line-height: 1.35;
+            font-weight: 400;
+        }
+
+        a {
+            color: #000000;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        header {
+            position: fixed;
+            top: 18px;
+            left: 20px;
+            right: 20px;
+
+            display: flex;
+            justify-content: space-between;
+
+            z-index: 100;
+            pointer-events: none;
+        }
+
+        header a,
+        header div {
+            pointer-events: auto;
+        }
+
+        .gallery {
+            width: 100%;
+            padding: 100px 20px 120px;
+        }
+
+        figure {
+            margin: 0 0 140px 0;
+            width: 100%;
+
+            display: flex;
+            justify-content: center;
+        }
+
+        figure:last-child {
+            margin-bottom: 0;
+        }
+
+        .image-entry {
+            width: fit-content;
+            max-width: 70vw;
+        }
+
+        figure img {
+            display: block;
+
+            max-width: 70vw;
+            max-height: 75vh;
+
+            width: auto;
+            height: auto;
+        }
+
+        figcaption {
+            margin-top: 12px;
+            max-width: 700px;
+        }
+
+        .image-caption {
+            max-width: 700px;
+        }
+
+        .end-marker {
+            padding: 0 20px;
+        }
+
+        .site-footer {
+            padding: 0 20px 18px;
+            margin-top: 100px;
+        }
+
+        @media (max-width: 600px) {
+
+            header {
+                top: 14px;
+                left: 14px;
+                right: 14px;
+            }
+
+            .gallery {
+                padding: 90px 14px 100px;
+            }
+
+            figure {
+                margin-bottom: 100px;
+            }
+
+            .image-entry {
+                max-width: 100%;
+            }
+
+            figure img {
+                max-width: 100%;
+                max-height: none;
+            }
+
+            figcaption {
+                max-width: 100%;
+            }
+
+            .end-marker {
+                padding: 0 14px;
+            }
+
+            .site-footer {
+                padding: 0 14px 14px;
+                margin-top: 80px;
+            }
+
+        }
+
+    </style>
+</head>
+
+<body>
+
+<header>
+    <div>landscapes</div>
+    <a href="art.html">← ART</a>
+</header>
+
+<main class="gallery" id="gallery"></main>
+
+<div class="end-marker">
+    [ end ]
+</div>
+
+<footer class="site-footer">
+    [ © Victor M. Gonzalez, 2026 ]
+</footer>
+
+
+<script>
+
+    const gallery = document.getElementById("gallery");
+
+    const folder = "images/art/landscapes";
+    const prefix = "landscapes-";
+    const imageCount = 5;
+
+    const captions = [
+        "caption.000",
+        "caption.001",
+        "caption.002",
+        "caption.003",
+        "caption.004"
+    ];
+
+    for (let i = 0; i < imageCount; i++) {
+
+        const number = String(i).padStart(3, "0");
+        const caption = captions[i] || "";
+
+        const figure = document.createElement("figure");
+
+        figure.innerHTML = `
+            <div class="image-entry">
+
+                <img
+                    src="${folder}/${prefix}${number}.jpg"
+                    alt=""
+                >
+
+                ${
+                    caption
+                    ? `
+                        <figcaption>
+                            <div class="image-caption">
+                                ${caption}
+                            </div>
+                        </figcaption>
+                      `
+                    : ""
+                }
+
+            </div>
+        `;
+
+        gallery.appendChild(figure);
+    }
+
+</script>
+
+</body>
+</html>
