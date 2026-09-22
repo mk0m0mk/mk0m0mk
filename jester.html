@@ -77,8 +77,12 @@
             width: 100%;
 
             display: flex;
-            flex-direction: column;
-            align-items: center;
+            justify-content: center;
+        }
+
+        .image-entry {
+            width: fit-content;
+            max-width: 70vw;
         }
 
         figure img {
@@ -95,10 +99,8 @@
         /* IMAGE TEXT */
 
         figcaption {
-            width: 100%;
-            max-width: 700px;
-
             margin-top: 12px;
+            max-width: 700px;
         }
 
         .image-description {
@@ -143,6 +145,10 @@
             .gallery {
                 padding: 90px 14px 100px;
                 min-height: 100vh;
+            }
+
+            .image-entry {
+                max-width: 100%;
             }
 
             figure img {
@@ -190,34 +196,38 @@
 
     <figure>
 
-        <img
-            src="images/canvas/jester/jester-000.jpg"
-            alt="jester (fluid)"
-        >
+        <div class="image-entry">
 
-        <figcaption>
+            <img
+                src="images/canvas/jester/jester-000.jpg"
+                alt="jester (fluid)"
+            >
 
-            <div class="image-description">
+            <figcaption>
 
-                <p>
-                    Jester (fluid) — 8 × 10”
-                </p>
+                <div class="image-description">
 
-                <p>
-                    An exploration in nontraditional canvas paint, ink, and dyes through action painting techniques and psychic automatism.
-                </p>
+                    <p>
+                        Jester (fluid) — 8 × 10”
+                    </p>
 
-                <p>
-                    Enamel and acrylic paints, block printing ink, and powdered color fiber dye on cotton duck canvas.
-                </p>
+                    <p>
+                        An exploration in nontraditional canvas paint, ink, and dyes through action painting techniques and psychic automatism.
+                    </p>
 
-                <p>
-                    Photographed with Canon 5D Mark IV, 70–200mm.
-                </p>
+                    <p>
+                        Enamel and acrylic paints, block printing ink, and powdered color fiber dye on cotton duck canvas.
+                    </p>
 
-            </div>
+                    <p>
+                        Photographed with Canon 5D Mark IV, 70–200mm.
+                    </p>
 
-        </figcaption>
+                </div>
+
+            </figcaption>
+
+        </div>
 
     </figure>
 
