@@ -65,12 +65,16 @@
             width: 100%;
 
             display: flex;
-            flex-direction: column;
-            align-items: center;
+            justify-content: center;
         }
 
         figure:last-child {
             margin-bottom: 0;
+        }
+
+        .image-entry {
+            width: fit-content;
+            max-width: 70vw;
         }
 
         figure img {
@@ -84,13 +88,12 @@
         }
 
         figcaption {
-            width: 100%;
-            max-width: 700px;
             margin-top: 12px;
+            max-width: 700px;
         }
 
-        .image-description {
-            max-width: 500px;
+        .image-caption {
+            max-width: 700px;
         }
 
         .end-marker {
@@ -118,6 +121,10 @@
                 margin-bottom: 100px;
             }
 
+            .image-entry {
+                max-width: 100%;
+            }
+
             figure img {
                 max-width: 100%;
                 max-height: none;
@@ -143,16 +150,20 @@
 
 <body>
 
+
 <header>
     <div>14.06.25</div>
     <a href="art.html">← ART</a>
 </header>
 
+
 <main class="gallery" id="gallery"></main>
+
 
 <div class="end-marker">
     [ end ]
 </div>
+
 
 <footer class="site-footer">
     [ © Victor M. Gonzalez, 2026 ]
@@ -167,16 +178,6 @@
     const prefix = "14.06.25-";
     const imageCount = 10;
 
-
-    /* --------------------------------
-       IMAGE CAPTIONS
-
-       Caption 0 = 24.05.25-000.jpg
-       Caption 1 = 24.05.25-001.jpg
-       Caption 2 = 24.05.25-002.jpg
-       etc.
-    -------------------------------- */
-
     const captions = [
 
         "no.kings.protest.PSP.asshole - 000",
@@ -188,46 +189,46 @@
         "no.kings.protest.PSP.untitled - 006.",
         "no.kings.protest.PSP.teeth - 007.",
         "no.kings.protest.PSP.tessies - 008.",
-        "no.kings.protest.PSP.untitled - 009.",
+        "no.kings.protest.PSP.untitled - 009."
 
     ];
 
 
-    /* --------------------------------
-       GENERATE GALLERY
-    -------------------------------- */
-
     for (let i = 0; i < imageCount; i++) {
 
         const number = String(i).padStart(3, "0");
+        const caption = captions[i] || "";
 
         const figure = document.createElement("figure");
 
-        const caption = captions[i] || "";
-
         figure.innerHTML = `
-            <img
-                src="${folder}/${prefix}${number}.jpg"
-                alt=""
-            >
+            <div class="image-entry">
 
-            ${
-                caption
-                ? `
-                    <figcaption>
-                        <div class="image-description">
-                            ${caption}
-                        </div>
-                    </figcaption>
-                  `
-                : ""
-            }
+                <img
+                    src="${folder}/${prefix}${number}.jpg"
+                    alt=""
+                >
+
+                ${
+                    caption
+                    ? `
+                        <figcaption>
+                            <div class="image-caption">
+                                ${caption}
+                            </div>
+                        </figcaption>
+                      `
+                    : ""
+                }
+
+            </div>
         `;
 
         gallery.appendChild(figure);
     }
 
 </script>
+
 
 </body>
 </html>
