@@ -4,7 +4,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel="icon" type="image/png" href="favicon.png">
+
+    <link rel="icon" type="image/png" href="favicon.png">
+
     <title>general — Victor M. Gonzalez</title>
 
     <style>
@@ -61,11 +63,15 @@
         }
 
         figure {
-            margin: 0;
+            margin: 0 0 140px 0;
             width: 100%;
 
             display: flex;
             justify-content: center;
+        }
+
+        figure:last-child {
+            margin-bottom: 0;
         }
 
         .image-entry {
@@ -97,8 +103,12 @@
             overflow-wrap: anywhere;
         }
 
+        .placeholder-text {
+            display: block;
+        }
+
         .end-marker {
-            padding: 120px 20px 0;
+            padding: 0 20px;
         }
 
         .site-footer {
@@ -118,6 +128,10 @@
                 padding: 90px 14px 100px;
             }
 
+            figure {
+                margin-bottom: 100px;
+            }
+
             .image-entry {
                 max-width: 100%;
             }
@@ -128,7 +142,7 @@
             }
 
             .end-marker {
-                padding: 100px 14px 0;
+                padding: 0 14px;
             }
 
             .site-footer {
@@ -150,39 +164,7 @@
 </header>
 
 
-<main class="gallery">
-
-    <figure>
-
-        <div class="image-entry">
-
-            <img
-                src="images/commercial/general/general-000.jpg"
-                alt=""
-            >
-
-            <figcaption>
-
-                <div class="image-title">
-                    calarts.accepted.students.day.11.04.26
-                </div>
-
-                <a
-                    class="image-link"
-                    href="https://www.photos.calarts.edu/Institute/Accepted-Student-Event-4-11-2026"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                >
-                    https://www.photos.calarts.edu/Institute/Accepted-Student-Event-4-11-2026
-                </a>
-
-            </figcaption>
-
-        </div>
-
-    </figure>
-
-</main>
+<main class="gallery" id="gallery"></main>
 
 
 <div class="end-marker">
@@ -193,6 +175,88 @@
 <footer class="site-footer">
     [ © Victor M. Gonzalez, 2026 ]
 </footer>
+
+
+<script>
+
+    const gallery = document.getElementById("gallery");
+
+
+    const entries = [
+
+        {
+            image: "general-000.jpg",
+            title: "open.show.24.04.26",
+            link: "https://www.photos.calarts.edu/School-of-Film-Video/Open-Show-4-24-2026",
+            linkText: "https://www.photos.calarts.edu/School-of-Film-Video/Open-Show-4-24-2026"
+        },
+
+        {
+            image: "general-001.jpg",
+            title: "calarts.accepted.students.day.11.04.26",
+            link: "https://www.photos.calarts.edu/Institute/Accepted-Student-Event-4-11-2026",
+            linkText: "https://www.photos.calarts.edu/Institute/Accepted-Student-Event-4-11-2026."
+        },
+
+        {
+            image: "general-002.jpg",
+            title: "jorge.gutierrez.27.02.26",
+            link: "https://www.photos.calarts.edu/School-of-Film-Video/Jorge-Gutierrez-2-27-2026",
+            linkText: "https://www.photos.calarts.edu/School-of-Film-Video/Jorge-Gutierrez-2-27-2026"
+        }
+
+    ];
+
+
+    for (const entry of entries) {
+
+        const figure = document.createElement("figure");
+
+
+        const secondLine = entry.link
+            ? `
+                <a
+                    class="image-link"
+                    href="${entry.link}"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    ${entry.linkText}
+                </a>
+              `
+            : `
+                <div class="placeholder-text">
+                    ${entry.linkText}
+                </div>
+              `;
+
+
+        figure.innerHTML = `
+            <div class="image-entry">
+
+                <img
+                    src="images/commercial/general/${entry.image}"
+                    alt=""
+                >
+
+                <figcaption>
+
+                    <div class="image-title">
+                        ${entry.title}
+                    </div>
+
+                    ${secondLine}
+
+                </figcaption>
+
+            </div>
+        `;
+
+
+        gallery.appendChild(figure);
+    }
+
+</script>
 
 
 </body>
